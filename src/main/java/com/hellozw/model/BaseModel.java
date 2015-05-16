@@ -32,7 +32,6 @@ public class BaseModel implements Serializable {
 	public boolean equals( Object obj )
 	{
 		if( this==obj ) return true;
-		
 		if( !( obj instanceof BaseModel ) )
 			return false;
 		

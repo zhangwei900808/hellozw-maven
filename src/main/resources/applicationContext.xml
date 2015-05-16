@@ -80,7 +80,7 @@
         </property>
     </bean>
 
-    <bean id="personNavAction" class="com.hellozw.action.MainAction"
+    <!--<bean id="personNavAction" class="com.hellozw.action.MainAction"
           scope="prototype">
         <property name="personNavService">
             <ref local="personNavService"></ref>
@@ -94,5 +94,5 @@
         <property name="linkService">
             <ref local="linkService"></ref>
         </property>
-    </bean>
+    </bean>-->
 </beans>
