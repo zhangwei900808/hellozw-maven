@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework:spring-context:4.1.6.RELEASE">
     <CLASSES>
-      <root url="jar://E:/maven/maven-repo/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://E:/maven/maven-repo/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE-javadoc.jar!/" />

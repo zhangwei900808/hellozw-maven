@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - HelloZw@115.28.149.204 [2]" uuid="86bbc0be-32d3-4ed4-92fe-0b93e092dee6">
+    <database-info product="MySQL" version="5.6.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="HelloZw"/>
+    <table name="BOOKMUSICMOVIE" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="AUTHOR" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COUNTRY" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE1" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="TYPE2" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="INTRODUCTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="REVIEW" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_piru16lo2w3a2suheboun8xgu" table="COMMENT" schema="" catalog="HelloZw" columns="BOOKMUSICMOVIE_ID"/>
+      <exported-key name="FK_ulp48kcc2anjk7x831o8sl1h" table="FILEINFO" schema="" catalog="HelloZw" columns="BOOKMUSICMOVIE_ID"/>
+    </table>
+    <table name="COMMENT" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="content" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="USERDYNAMICINFO_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DIARY_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BOOKMUSICMOVIE_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_48jcifsc9opuac51n002wjl25" columns="DIARY_ID" ref-table="DIARY" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_piru16lo2w3a2suheboun8xgu" columns="BOOKMUSICMOVIE_ID" ref-table="BOOKMUSICMOVIE" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_t5usjy4ekcvpigow1ewblulvf" columns="USERDYNAMICINFO_ID" ref-table="USERDYNAMICINFO" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_48jcifsc9opuac51n002wjl25" unique="false" columns="DIARY_ID"/>
+      <index name="FK_piru16lo2w3a2suheboun8xgu" unique="false" columns="BOOKMUSICMOVIE_ID"/>
+      <index name="FK_t5usjy4ekcvpigow1ewblulvf" unique="false" columns="USERDYNAMICINFO_ID"/>
+    </table>
+    <table name="CONFIGURATION" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="CONTENT" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_e93mnkopkw3skq6nk9vmc0qfr" table="FILEINFO" schema="" catalog="HelloZw" columns="CONFIGURATION_ID"/>
+    </table>
+    <table name="DIARY" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TITLE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CONTENT" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_48jcifsc9opuac51n002wjl25" table="COMMENT" schema="" catalog="HelloZw" columns="DIARY_ID"/>
+      <exported-key name="FK_gb1u7q371l6qoa16sujlxwq9f" table="FILEINFO" schema="" catalog="HelloZw" columns="DIARY_ID"/>
+    </table>
+    <table name="FILEINFO" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="PATH" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="LINK_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PROJECTAWARD_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USERDYNAMICINFO_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DIARY_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BOOKMUSICMOVIE_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CONFIGURATION_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_cl4pibk85vy2q884qwq5lo04y" columns="USERDYNAMICINFO_ID" ref-table="USERDYNAMICINFO" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_cxvatqmnud5xe52lsd7m66mm1" columns="LINK_ID" ref-table="LINK" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_e93mnkopkw3skq6nk9vmc0qfr" columns="CONFIGURATION_ID" ref-table="CONFIGURATION" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_gb1u7q371l6qoa16sujlxwq9f" columns="DIARY_ID" ref-table="DIARY" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_jp5tpbjf7gbfse2bpt5rg4b1g" columns="PROJECTAWARD_ID" ref-table="PROJECTAWARD" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ulp48kcc2anjk7x831o8sl1h" columns="BOOKMUSICMOVIE_ID" ref-table="BOOKMUSICMOVIE" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_cl4pibk85vy2q884qwq5lo04y" unique="false" columns="USERDYNAMICINFO_ID"/>
+      <index name="FK_cxvatqmnud5xe52lsd7m66mm1" unique="false" columns="LINK_ID"/>
+      <index name="FK_e93mnkopkw3skq6nk9vmc0qfr" unique="false" columns="CONFIGURATION_ID"/>
+      <index name="FK_gb1u7q371l6qoa16sujlxwq9f" unique="false" columns="DIARY_ID"/>
+      <index name="FK_jp5tpbjf7gbfse2bpt5rg4b1g" unique="false" columns="PROJECTAWARD_ID"/>
+      <index name="FK_ulp48kcc2anjk7x831o8sl1h" unique="false" columns="BOOKMUSICMOVIE_ID"/>
+    </table>
+    <table name="LINK" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="URL" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="INTRODUCTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="PERSONALNAV_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ICON" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LEVEL" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_kd8xmy154dph3r3u8x0uo236s" columns="PERSONALNAV_ID" ref-table="PERSONALNAV" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_cxvatqmnud5xe52lsd7m66mm1" table="FILEINFO" schema="" catalog="HelloZw" columns="LINK_ID"/>
+      <index name="FK_kd8xmy154dph3r3u8x0uo236s" unique="false" columns="PERSONALNAV_ID"/>
+    </table>
+    <table name="OrderLineItem" schema="" catalog="HelloZw" type="TABLE">
+      <column name="OrderLineItem_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LineItemPrice" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="ORDER_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="OrderLineItem_ID"/>
+      <foreign-key name="FK_21d95e1u9usawaiyglugu4wci" columns="ORDER_ID" ref-table="Orders" ref-schema="" ref-catalog="HelloZw" ref-columns="Order_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_21d95e1u9usawaiyglugu4wci" unique="false" columns="ORDER_ID"/>
+    </table>
+    <table name="Orders" schema="" catalog="HelloZw" type="TABLE">
+      <column name="Order_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Total" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="UserName" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Order_ID"/>
+      <exported-key name="FK_21d95e1u9usawaiyglugu4wci" table="OrderLineItem" schema="" catalog="HelloZw" columns="ORDER_ID"/>
+    </table>
+    <table name="PERSONALNAV" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="LEVEL" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_kd8xmy154dph3r3u8x0uo236s" table="LINK" schema="" catalog="HelloZw" columns="PERSONALNAV_ID"/>
+    </table>
+    <table name="PROJECTAWARD" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE1" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="TYPE2" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="CONTENT" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="RESUMEINFO_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_jp81lfbs3cnygd6nrktbsqbk4" columns="RESUMEINFO_ID" ref-table="RESUMEINFO" ref-schema="" ref-catalog="HelloZw" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_jp5tpbjf7gbfse2bpt5rg4b1g" table="FILEINFO" schema="" catalog="HelloZw" columns="PROJECTAWARD_ID"/>
+      <index name="FK_jp81lfbs3cnygd6nrktbsqbk4" unique="false" columns="RESUMEINFO_ID"/>
+    </table>
+    <table name="RESUMEINFO" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="INTRODUCTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_jp81lfbs3cnygd6nrktbsqbk4" table="PROJECTAWARD" schema="" catalog="HelloZw" columns="RESUMEINFO_ID"/>
+    </table>
+    <table name="USERDYNAMICINFO" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CONTENT" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_t5usjy4ekcvpigow1ewblulvf" table="COMMENT" schema="" catalog="HelloZw" columns="USERDYNAMICINFO_ID"/>
+      <exported-key name="FK_cl4pibk85vy2q884qwq5lo04y" table="FILEINFO" schema="" catalog="HelloZw" columns="USERDYNAMICINFO_ID"/>
+    </table>
+    <table name="USERINFO" schema="" catalog="HelloZw" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LOGINNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="UPDATEDT" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+  </data-source>
+</component>

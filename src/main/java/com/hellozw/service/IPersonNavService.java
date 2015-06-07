@@ -3,7 +3,6 @@ package com.hellozw.service;
 import java.util.List;
 
 import com.hellozw.model.PersonalNav;
-import com.hellozw.dao.IPersonNavDAO;
 
 public interface IPersonNavService {
 
@@ -17,22 +16,22 @@ public interface IPersonNavService {
 	/**
 	 * 添加用户导航菜单
 	 * 
-	 * @param name
+	 * @param
 	 */
-	void savePersonalNav(PersonalNav personalNav);
+	void savePersonalNav(PersonalNav PersonalNav);
 
 	/**
 	 * 删除导航
 	 * 
-	 * @param personalNav
+	 * @param PersonalNav
 	 */
-	void delPersonalNav(PersonalNav personalNav);
+	void delPersonalNav(PersonalNav PersonalNav);
 	
 	/**
 	 * 更新导航
-	 * @param personalNav
+	 * @param PersonalNav
 	 */
-	void updatePersonalNav(PersonalNav personalNav);
+	void updatePersonalNav(PersonalNav PersonalNav);
 
 	/**
 	 * 
@@ -46,5 +45,5 @@ public interface IPersonNavService {
 	 * 查询导航下链接的个数
 	 * @return
 	 */
-	int findPersonalNavOfLinkCount(PersonalNav personalNav);
+	int findPersonalNavOfLinkCount(PersonalNav PersonalNav);
 }

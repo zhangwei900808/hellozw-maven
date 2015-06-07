@@ -28,25 +28,25 @@ public interface IPersonNavDAO {
 	
 	/**
 	 * 删除导航
-	 * @param personalNav
+	 * @param PersonalNav
 	 */
-	void delPersonalNav(PersonalNav personalNav);
+	void delPersonalNav(PersonalNav PersonalNav);
 	
 	/**
 	 * 更新导航
-	 * @param personalNav
+	 * @param PersonalNav
 	 */
-	void updatePersonalNav(PersonalNav personalNav);
+	void updatePersonalNav(PersonalNav PersonalNav);
 	
 	/**
 	 * 根据导航名称查询导航列表
 	 * @return
 	 */
-	List<PersonalNav> findAllByName(PersonalNav personalNav);
+	List<PersonalNav> findAllByName(PersonalNav PersonalNav);
 	
 	/**
 	 * 查询导航下链接的个数
 	 * @return
 	 */
-	int findPersonalNavOfLinkCount(PersonalNav personalNav);
+	int findPersonalNavOfLinkCount(PersonalNav PersonalNav);
 }

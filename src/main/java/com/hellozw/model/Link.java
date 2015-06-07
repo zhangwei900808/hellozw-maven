@@ -3,132 +3,133 @@ package com.hellozw.model;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.*;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * 链接表
- * 
+ *
  * @author Administrator
- * 
  */
-public class Link extends BaseModel {
-	// id
-	private String id;
+@Entity
+@Table(name="Link")
+public class Link {
+    private String id;
+    private String name;
+    private String url;
+    private String icon;
+    private int level;
+    private int type;
+    private String introduction;
+    private Timestamp createDt;
+    private Timestamp updateDt;
+    // 个性导航(多对一)
+    private PersonalNav PersonalNav;
 
-	// 链接名称
-	private String name;
+    // id
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    public String getId() {
+        return id;
+    }
 
-	// 链接地址
-	private String url;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	// 网站图标
-	private String icon;
+    // 链接名称
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
 
-	// 显示顺序
-	private int level;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	// 类型
-	private int type;
+    // 类型
+    @Column(name = "type")
+    public int getType() {
+        return type;
+    }
 
-	// 介绍说明
-	private String introduction;
+    public void setType(int type) {
+        this.type = type;
+    }
 
-	// 创建时间
-	private Timestamp createDt;
+    // 介绍说明
+    @Column(name = "introduction")
+    public String getIntroduction() {
+        return introduction;
+    }
 
-	// 更新时间
-	private Timestamp updateDt;
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
 
-	// 个性导航(多对一)
-	private PersonalNav personalNav;
+    // 创建时
+    @Column(name = "createDt")
+    public Timestamp getCreateDt() {
+        return createDt;
+    }
 
-	// 文件信息列表(一对多)
-	private Set<FileInfo> fileInfos = new HashSet<FileInfo>();
+    public void setCreateDt(Timestamp createDt) {
+        this.createDt = createDt;
+    }
 
-	public String getId() {
-		return id;
-	}
+    // 更新时间
+    @Column(name = "updateDt")
+    public Timestamp getUpdateDt() {
+        return updateDt;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setUpdateDt(Timestamp updateDt) {
+        this.updateDt = updateDt;
+    }
 
-	public String getName() {
-		return name;
-	}
+    //延迟加载：多对一方式
+    //关联信息：外键name = "category_id"
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PersonalNav_id")
+    public PersonalNav getPersonalNav() {
+        return PersonalNav;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setPersonalNav(PersonalNav PersonalNav) {
+        this.PersonalNav = PersonalNav;
+    }
 
-	public int getType() {
-		return type;
-	}
+    // 链接地址
+    @Column(name = "url")
+    public String getUrl() {
+        return url;
+    }
 
-	public void setType(int type) {
-		this.type = type;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public String getIntroduction() {
-		return introduction;
-	}
+    // 网站图标
+    @Column(name = "icon")
+    public String getIcon() {
+        return icon;
+    }
 
-	public void setIntroduction(String introduction) {
-		this.introduction = introduction;
-	}
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-	public Timestamp getCreateDt() {
-		return createDt;
-	}
+    // 显示顺序
+    @Column(name = "level")
+    public int getLevel() {
+        return level;
+    }
 
-	public void setCreateDt(Timestamp createDt) {
-		this.createDt = createDt;
-	}
-
-	public Timestamp getUpdateDt() {
-		return updateDt;
-	}
-
-	public void setUpdateDt(Timestamp updateDt) {
-		this.updateDt = updateDt;
-	}
-
-	public PersonalNav getPersonalNav() {
-		return personalNav;
-	}
-
-	public void setPersonalNav(PersonalNav personalNav) {
-		this.personalNav = personalNav;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public Set<FileInfo> getFileInfos() {
-		return fileInfos;
-	}
-
-	public void setFileInfos(Set<FileInfo> fileInfos) {
-		this.fileInfos = fileInfos;
-	}
-
-	public String getIcon() {
-		return icon;
-	}
-
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
-
-	public int getLevel() {
-		return level;
-	}
-
-	public void setLevel(int level) {
-		this.level = level;
-	}
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

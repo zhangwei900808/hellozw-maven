@@ -1,6 +1,5 @@
 package com.hellozw.dao.hibernate;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.hellozw.dao.IPersonNavDAO;
@@ -16,30 +15,30 @@ public class PersonNavHibernateDAO extends HibernateDaoSupport implements
 	 */
 	@Override
 	public List<PersonalNav> findAllPersonalNav() {
-		List<PersonalNav> personalNavs = (List<PersonalNav>) getHibernateTemplate()
+		List<PersonalNav> PersonalNavs = (List<PersonalNav>) getHibernateTemplate()
 				.loadAll(PersonalNav.class);
-		return personalNavs;
+		return PersonalNavs;
 	}
 
 	/**
 	 * 添加用户导航数据
 	 */
 	@Override
-	public void savePersonalNav(PersonalNav personalNav) {
-		getHibernateTemplate().save(personalNav);
+	public void savePersonalNav(PersonalNav PersonalNav) {
+		getHibernateTemplate().save(PersonalNav);
 	}
 
 	@Override
-	public List<PersonalNav> findAllByType(PersonalNav personalNav) {
+	public List<PersonalNav> findAllByType(PersonalNav PersonalNav) {
 		try {
-			if (personalNav.getType() == 0) {
+			if (PersonalNav.getType() == 0) {
 				return findAllPersonalNav();
 			}
 			@SuppressWarnings("unchecked")
-			List<PersonalNav> personalNavs = (List<PersonalNav>) getHibernateTemplate()
+			List<PersonalNav> PersonalNavs = (List<PersonalNav>) getHibernateTemplate()
 					.find("select p from PersonalNav p where p.type like ? order by p.level",
-							personalNav.getType());
-			return personalNavs;
+							PersonalNav.getType());
+			return PersonalNavs;
 		} catch (Exception e) {
 			System.out.println("findAllByType出错：" + e.getMessage());
 			return null;
@@ -47,13 +46,13 @@ public class PersonNavHibernateDAO extends HibernateDaoSupport implements
 	}
 
 	@Override
-	public List<PersonalNav> findAllByName(PersonalNav personalNav) {
+	public List<PersonalNav> findAllByName(PersonalNav PersonalNav) {
 		try {
 			@SuppressWarnings("unchecked")
-			List<PersonalNav> personalNavs = (List<PersonalNav>) getHibernateTemplate()
+			List<PersonalNav> PersonalNavs = (List<PersonalNav>) getHibernateTemplate()
 					.find("select p from PersonalNav p where p.name=?",
-							personalNav.getName());
-			return personalNavs;
+							PersonalNav.getName());
+			return PersonalNavs;
 		} catch (Exception e) {
 			System.out.println("findAllByName出错：" + e.getMessage());
 			return null;
@@ -64,10 +63,10 @@ public class PersonNavHibernateDAO extends HibernateDaoSupport implements
 	 * 删除导航
 	 */
 	@Override
-	public void delPersonalNav(PersonalNav personalNav) {
+	public void delPersonalNav(PersonalNav PersonalNav) {
 		try {
-			PersonalNav personalNav2=getHibernateTemplate().load(PersonalNav.class, personalNav.getId());
-			getHibernateTemplate().delete(personalNav2);
+            PersonalNav PersonalNav2=getHibernateTemplate().load(PersonalNav.class, PersonalNav.getId());
+			getHibernateTemplate().delete(PersonalNav2);
 		} catch (Exception e) {
 			System.out.println("delPersonalNav出错:" + e.getMessage());
 		}
@@ -78,12 +77,12 @@ public class PersonNavHibernateDAO extends HibernateDaoSupport implements
 	 * 查询导航下链接的个数
 	 */
 	@Override
-	public int findPersonalNavOfLinkCount(PersonalNav personalNav) {
+	public int findPersonalNavOfLinkCount(PersonalNav PersonalNav) {
 		int count;
 		try {
-			PersonalNav personalNav2 = getHibernateTemplate().load(
-					PersonalNav.class, personalNav.getId());
-			count = personalNav2.getLinks().size();
+            PersonalNav PersonalNav2 = getHibernateTemplate().load(
+                    PersonalNav.class, PersonalNav.getId());
+			count =0;
 			return count;
 
 		} catch (Exception e) {
@@ -94,21 +93,21 @@ public class PersonNavHibernateDAO extends HibernateDaoSupport implements
 	}
 
 	@Override
-	public void updatePersonalNav(PersonalNav personalNav) {
+	public void updatePersonalNav(PersonalNav PersonalNav) {
 		try {
-			PersonalNav personalNav2 = getHibernateTemplate().load(
-					PersonalNav.class, personalNav.getId());
-			if (personalNav.getName() != null) {
-				personalNav2.setName(personalNav.getName());
+            PersonalNav PersonalNav2 = getHibernateTemplate().load(
+                    PersonalNav.class, PersonalNav.getId());
+			if (PersonalNav.getName() != null) {
+				PersonalNav2.setName(PersonalNav.getName());
 			}
-			if (personalNav.getLevel()!= 0) {
-				personalNav2.setLevel(personalNav.getLevel());
+			if (PersonalNav.getLevel()!= 0) {
+				PersonalNav2.setLevel(PersonalNav.getLevel());
 			}
-			if (personalNav.getType() != 0) {
-				personalNav2.setType(personalNav.getType());
+			if (PersonalNav.getType() != 0) {
+				PersonalNav2.setType(PersonalNav.getType());
 			}
-			personalNav2.setUpdateDt(new Timestamp(System.currentTimeMillis()));
-			getHibernateTemplate().update(personalNav2);
+
+			getHibernateTemplate().update(PersonalNav2);
 		} catch (Exception e) {
 			System.out.println("updatePersonalNav出错:" + e.getMessage());
 		}

@@ -1,91 +1,108 @@
 package com.hellozw.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * 个性导航类
- * 
+ *
  * @author Administrator
- * 
  */
-public class PersonalNav extends BaseModel{
-	// id
-	private String id;
-	
-	// 节点名称
-	private String name;
+@Entity
+public class PersonalNav {
+    private String id;
 
-	// 节点类型
-	private int type;
-	
-	//显示顺序
-	private int level;
+    private String name;
 
-	// 创建时间
-	private Timestamp createDt;
+    private int type;
 
-	// 更新时间
-	private Timestamp updateDt;
-	
-	//链接列表(一对多)
-	private Set<Link> links = new HashSet<Link>();
+    private int level;
 
-	public String getId() {
-		return id;
-	}
+    private Timestamp createDt;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    private Timestamp updateDt;
 
-	public String getName() {
-		return name;
-	}
+    //链接列表(一对多)
+    private Set<Link> links = new HashSet<Link>();
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    // id
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    public String getId() {
+        return id;
+    }
 
-	public int getType() {
-		return type;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setType(int type) {
-		this.type = type;
-	}
+    // 节点名称
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setLevel(int level) {
-		this.level = level;
-	}
+    // 节点类型
+    @Column(name = "type")
+    public int getType() {
+        return type;
+    }
 
-	public Timestamp getCreateDt() {
-		return createDt;
-	}
+    public void setType(int type) {
+        this.type = type;
+    }
 
-	public void setCreateDt(Timestamp createDt) {
-		this.createDt = createDt;
-	}
+    //显示顺序
+    @Column(name = "level")
+    public int getLevel() {
+        return level;
+    }
 
-	public Timestamp getUpdateDt() {
-		return updateDt;
-	}
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
-	public void setUpdateDt(Timestamp updateDt) {
-		this.updateDt = updateDt;
-	}
+    // 创建时间
+    @Column(name = "createDt")
+    public Timestamp getCreateDt() {
+        return createDt;
+    }
 
-	public Set<Link> getLinks() {
-		return links;
-	}
+    public void setCreateDt(Timestamp createDt) {
+        this.createDt = createDt;
+    }
 
-	public void setLinks(Set<Link> links) {
-		this.links = links;
-	}
+    // 更新时间
+    @Column(name = "updateDt")
+    public Timestamp getUpdateDt() {
+        return updateDt;
+    }
+
+    public void setUpdateDt(Timestamp updateDt) {
+        this.updateDt = updateDt;
+    }
+
+    //级联操作：cascade = CascadeType.ALL
+    //延迟加载：fetch = FetchType.LAZY
+    //映射：mappedBy = "category"
+    //一对多方式
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "personalNav")
+    public Set<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Set<Link> links) {
+        this.links = links;
+    }
 
 }
