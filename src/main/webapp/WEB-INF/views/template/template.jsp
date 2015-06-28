@@ -8,6 +8,7 @@
     <title><sitemesh:write property="title"/></title>
     <!-- Loading Bootstrap -->
     <link href="${path}/js/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${path}/js/Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="${path}/css/common.css" rel="stylesheet">
     <link href="${path}/css/social-buttons.css" rel="stylesheet">
     <link href="${path}/css/template.css" rel="stylesheet">
@@ -25,53 +26,35 @@
 <nav class="navbar navbar-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"
-               style="font-weight: bold; color: #333;"> HelloZw </a>
+            <a class="navbar-brand" href="/"
+               style="font-weight: bold; color: #333;"><span class="mega-octicon octicon-mark-github"></span></a>
+            <div class="search">
+                <form id="querylink" action="http://www.baidu.com/baidu"
+                      target="_blank" class="input-group input-group-sm">
+                    <input name="tn" type="hidden" value="baidu"> <input
+                        id="linktxt" name="word" baiduSug="1" type="text"
+                        class="form-control" placeholder="请输入查询内容"> <span
+                        class="input-group-btn">
+					</span>
+                </form>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-01">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/" class="header-nav-link">首页</a></li>
-                <li><a href="/navigation.html" class="header-nav-link">网址导航</a></li>
-                <li><a href="/navigation.html" class="header-nav-link">资源搜索</a></li>
-                <li><a href="/navigation.html" class="header-nav-link">软件库</a></li>
-                <li><a href="/navigation.html" class="header-nav-link">备忘录</a></li>
+                <li><a href="/navigation.html" class="header-nav-link">Navigation</a></li>
+                <li><a href="/navigation.html" class="header-nav-link">Resource Search</a></li>
+                <li><a href="/navigation.html" class="header-nav-link">Soft Hub</a></li>
+                <li><a href="/navigation.html" class="header-nav-link">Note</a></li>
                 <li><a href="#" class="header-nav-link">Resume</a></li>
-                <li class="dropdown"><a href="#"
-                                        class="dropdown-toggle header-nav-link" data-toggle="dropdown">生活
-                    <b class="caret"></b>
-                </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="octicon octicon-milestone"></span>&nbsp;&nbsp;心情</a></li>
-                        <li><a href="#"><span class="octicon octicon-book"></span>&nbsp;&nbsp;读书</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#"
-                                        class="dropdown-toggle header-nav-link" data-toggle="dropdown">娱乐
-                    <b class="caret"></b>
-                </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;照片</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音乐</a></li>
-                        <li><a href="#"><span
-                                class="glyphicon glyphicon-facetime-video"></span>&nbsp;&nbsp;电影</a></li>
-                    </ul>
-                </li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
-                <li><a href="aboutme" class="header-nav-link"
+                <li><a href="/login.html" class="header-nav-link"
                        data-toggle="tooltip" data-placement="bottom"
                        title="<div style='width:30px;'>登录 </div>"> <span
                         class="octicon octicon-sign-in"></span>&nbsp;
                 </a></li>
-                <!--  <li><a href="aboutme" class="header-nav-link"
-                    data-toggle="tooltip" data-placement="bottom"
-                    title="<div style='width:30px;'>消息  </div>"> <span
-                        class="glyphicon glyphicon-comment"></span>&nbsp;
-                </a></li>-->
-                <li><a href="aboutme" class="header-nav-link"
+                <li><a href="/aboutme.html" class="header-nav-link"
                        data-toggle="tooltip" data-placement="bottom"
                        title="<div style='width:30px;'>关于
          </div>"> <span
@@ -89,7 +72,7 @@
         <span>©2015 hellozw <a href="http://www.miitbeian.gov.cn/">皖ICP备14011269号-1</a></span>
     </div>
 </footer>
-
+<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
 <!-- /menu -->
 </body>
 </html>

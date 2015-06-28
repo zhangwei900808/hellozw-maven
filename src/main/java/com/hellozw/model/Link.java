@@ -14,8 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
  *
  * @author Administrator
  */
-@Entity
-@Table(name="Link")
+@Entity(name = "Link")
 public class Link {
     private String id;
     private String name;
@@ -27,12 +26,13 @@ public class Link {
     private Timestamp createDt;
     private Timestamp updateDt;
     // 个性导航(多对一)
-    private PersonalNav PersonalNav;
+    private PersonalNav personalNav;
 
     // id
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
+    @Column(name = "id", length = 40)
     public String getId() {
         return id;
     }
@@ -91,20 +91,11 @@ public class Link {
         this.updateDt = updateDt;
     }
 
-    //延迟加载：多对一方式
-    //关联信息：外键name = "category_id"
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PersonalNav_id")
-    public PersonalNav getPersonalNav() {
-        return PersonalNav;
-    }
-
-    public void setPersonalNav(PersonalNav PersonalNav) {
-        this.PersonalNav = PersonalNav;
-    }
 
     // 链接地址
-    @Column(name = "url")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "url", columnDefinition = "TEXT", nullable = true)
     public String getUrl() {
         return url;
     }
@@ -114,7 +105,9 @@ public class Link {
     }
 
     // 网站图标
-    @Column(name = "icon")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "icon", columnDefinition = "TEXT", nullable = true)
     public String getIcon() {
         return icon;
     }
@@ -131,5 +124,17 @@ public class Link {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    //延迟加载：多对一方式
+    //关联信息：外键name = "category_id"
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "personalNav_id")
+    public PersonalNav getPersonalNav() {
+        return personalNav;
+    }
+
+    public void setPersonalNav(PersonalNav personalNav) {
+        this.personalNav = personalNav;
     }
 }

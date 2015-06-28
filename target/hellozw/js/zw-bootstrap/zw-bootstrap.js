@@ -19,7 +19,7 @@
 			 //链接鼠标移动效果
 			 $(focus).hover(mouseenter)			 
 			 $this.toggleClass('selected').trigger('focus').attr('aria-shown', 'true')
-			 $parent.toggleClass('open').trigger('shown.zw.selectmenu', relatedTarget)
+			 $parent.toggleClass('open')
 		}
 		return false
 	}
@@ -37,7 +37,7 @@
 	      if (e.isDefaultPrevented()) return
 
 	      $this.removeClass('selected').attr('aria-shown', 'false')
-	      $parent.removeClass('open').trigger('hidden.zw.selectmenu', relatedTarget)
+	      $parent.removeClass('open')
 	    })
 	  }
 	

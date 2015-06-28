@@ -1,0 +1,126 @@
+
+.zw-glyphicon {
+    float: right;
+}
+
+#input-group-main-1 {
+    margin: 20px 0;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    color: #4183c4;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+a.list-group-item:link {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+a.list-group-item:visited {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+a.list-group-item:hover {
+    text-decoration: underline;
+    color: #4183c4;
+    background-color: #fff;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: none;
+    border-bottom: 2px solid #d26911;
+}
+
+.zwinput {
+    margin-left: 10px;
+    font-size: 12px;
+    height: 26px;
+    width: 90%;
+    border-radius: 12px;
+}
+
+.popover-content {
+    padding: 0;
+}
+
+.popover {
+    width: 300px;
+}
+
+.arrow {
+    display: none !important;
+}
+
+.show-nav-list {
+    display: none;
+}
+
+
+.showlinktable {
+    width: 100%;
+    height: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+#showlink {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+#showlink ul li {
+    float: left;
+
+}
+#showlink ul li div{
+    display: block;
+    width: 167px;
+    height: 30px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin:1px;
+
+}
+#showlink ul li div a {
+
+    text-decoration: none;
+}
+.showlinktable tr td {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.showlinktable tr td a {
+    font-size: 14px;
+}
+.link-tools{
+    height: 30px;
+}
+.myul {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.myul li {
+    float: left;
+    display: block;
+}
+
+.tool {
+    padding: 0 15px;
+}
+
+.leftcontent {
+    margin-top: 20px;
+}
+.octicon-edit{
+    width:27px;
+}

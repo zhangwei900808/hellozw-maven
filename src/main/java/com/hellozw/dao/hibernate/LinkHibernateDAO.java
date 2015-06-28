@@ -13,7 +13,6 @@ import javax.annotation.Resource;
 
 @Repository("linkDAO")
 public class LinkHibernateDAO extends HibernateDaoSupport implements ILinkDAO {
-
     @Resource(name = "sessionFactory")
     public void setSuperSessionFactory(SessionFactory sessionFactory){
         super.setSessionFactory(sessionFactory);
@@ -24,7 +23,7 @@ public class LinkHibernateDAO extends HibernateDaoSupport implements ILinkDAO {
     public List<Link> QueryLinkByNavId(String id) {
         try {
             return (List<Link>) getHibernateTemplate()
-                    .find("select l from Link l");
+                    .find("from Link");
         } catch (Exception e) {
             System.out.println("QueryLinkByNavId出错：" + e.getMessage());
             return null;
@@ -76,7 +75,6 @@ public class LinkHibernateDAO extends HibernateDaoSupport implements ILinkDAO {
     @Override
     public List<Link> QueryLinkByName(String name) {
         try {
-            @SuppressWarnings("unchecked")
             List<Link> links = (List<Link>) getHibernateTemplate()
                     .find("select l from Link l left join fetch l.PersonalNav p where l.name like ?",
                             "%" + name + "%");

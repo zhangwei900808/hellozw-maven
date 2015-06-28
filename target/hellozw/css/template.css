@@ -1,12 +1,5 @@
-
 .nav>li>a:hover,.nav>li>a:focus {
 	background-color: #f5f5f5;
-}
-
-.navbar-brand,.navbar-nav>li>a {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	height: inherit;
 }
 
 .header-nav-link {
@@ -319,4 +312,10 @@ footer a {
 	background:
 		url(http://images.apple.com/v/itunes/d/images/paddle_next.png) center
 		center no-repeat;
+}
+.navbar-brand {
+    padding: 10px;
+}
+.mega-octicon {
+    font-size: 30px;
 }

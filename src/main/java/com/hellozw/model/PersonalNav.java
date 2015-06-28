@@ -1,5 +1,7 @@
 package com.hellozw.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
@@ -14,8 +16,11 @@ import java.util.Set;
  * @author Administrator
  */
 @Entity
+@Table(name = "PersonalNav")
 public class PersonalNav {
     private String id;
+
+    private String pid;
 
     private String name;
 
@@ -32,8 +37,9 @@ public class PersonalNav {
 
     // id
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
+    @Column(name = "id", length = 40)
     public String getId() {
         return id;
     }
@@ -43,7 +49,17 @@ public class PersonalNav {
     }
 
     // 节点名称
-    @Column(name = "name")
+    @Column(name = "pId", length = 40)
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pId) {
+        this.pid = pId;
+    }
+
+    // 节点名称
+    @Column(name = "name", length = 40)
     public String getName() {
         return name;
     }
@@ -96,7 +112,7 @@ public class PersonalNav {
     //延迟加载：fetch = FetchType.LAZY
     //映射：mappedBy = "category"
     //一对多方式
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "personalNav")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalNav")
     public Set<Link> getLinks() {
         return links;
     }
@@ -104,5 +120,4 @@ public class PersonalNav {
     public void setLinks(Set<Link> links) {
         this.links = links;
     }
-
 }

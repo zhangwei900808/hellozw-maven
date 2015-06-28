@@ -19,23 +19,23 @@ public class PersonNavSpringImpl implements IPersonNavService {
 	 */
 	@Override
 	public List<PersonalNav> findAllPersonalNavs() {
-		List<PersonalNav> PersonalNavs = null;
+		List<PersonalNav> personalNavs = null;
 		try {
-			PersonalNavs = personNavDAO.findAllPersonalNav();
+			personalNavs = personNavDAO.findAllPersonalNav();
 		} catch (RuntimeException e) {
 			System.out
 					.println("findAllPersonalNavs方法出错，出错原因：" + e.getMessage());
 		}
-		return PersonalNavs;
+		return personalNavs;
 	}	
 
 	/**
 	 * 添加用户导航数据
 	 */
 	@Override
-	public void savePersonalNav(PersonalNav PersonalNav) {
+	public void savePersonalNav(PersonalNav personalNav) {
 		try {
-			personNavDAO.savePersonalNav(PersonalNav);
+			personNavDAO.savePersonalNav(personalNav);
 		} catch (Exception e) {
 			System.out.println("addPersonalNav方法出错，出错原因：" + e.getMessage());
 		}
@@ -43,28 +43,28 @@ public class PersonNavSpringImpl implements IPersonNavService {
 
 	@Override
 	public List<PersonalNav> findAllByType(PersonalNav type) {
-		List<PersonalNav> PersonalNavs = null;
+		List<PersonalNav> personalNavs = null;
 		try {
-			PersonalNavs = personNavDAO.findAllByType(type);
+			personalNavs = personNavDAO.findAllByType(type);
 		} catch (Exception e) {
 			System.out.println("findAllByType方法出错，出错原因：" + e.getMessage());
 		}
-		return PersonalNavs;
+		return personalNavs;
 	}
 
 	@Override
-	public void delPersonalNav(PersonalNav PersonalNav) {
+	public void delPersonalNav(PersonalNav personalNav) {
 		try {
-			personNavDAO.delPersonalNav(PersonalNav);
+			personNavDAO.delPersonalNav(personalNav);
 		} catch (Exception e) {
 			System.out.println("delPersonalNav方法出错，出错原因：" + e.getMessage());
 		}		
 	}
 
 	@Override
-	public int findPersonalNavOfLinkCount(PersonalNav PersonalNav) {
+	public int findPersonalNavOfLinkCount(PersonalNav personalNav) {
 		try {
-			return personNavDAO.findPersonalNavOfLinkCount(PersonalNav);
+			return personNavDAO.findPersonalNavOfLinkCount(personalNav);
 		} catch (Exception e) {
 			System.out.println("findPersonalNavOfLinkCount方法出错，出错原因：" + e.getMessage());
 			return 0;
@@ -72,9 +72,9 @@ public class PersonNavSpringImpl implements IPersonNavService {
 	}
 
 	@Override
-	public void updatePersonalNav(PersonalNav PersonalNav) {
+	public void updatePersonalNav(PersonalNav personalNav) {
 		try {
-			personNavDAO.updatePersonalNav(PersonalNav);
+			personNavDAO.updatePersonalNav(personalNav);
 		} catch (Exception e) {
 			System.out.println("updatePersonalNav方法出错，出错原因：" + e.getMessage());
 		}		

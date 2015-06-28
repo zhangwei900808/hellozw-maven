@@ -7,32 +7,16 @@
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 	color: #333;
 	background-color: #fff;
 	color: #333;
 }
 
-a,img {
-	border: 0;
+.search{
+    width: 400px;
+    padding-top: 10px;
 }
-
-a {
-	color: #4183c4;
-	text-decoration: none;
-}
-
-a:hover,a:focus {
-	color: #4183c4;
-	text-decoration: underline;
-}
-
-.a-help{
-	cursor:pointer;
-	color:#666;
-}
-.a-help:hover,a:focus{
-	text-decoration: none;
-	color: #4183c4;
+#linktxt{
+    width:360px;
 }

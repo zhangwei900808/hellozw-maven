@@ -1,27 +1,12 @@
 package com.hellozw.service;
 
-import com.hellozw.model.*;
-import com.hellozw.dao.*;
+import com.hellozw.model.User;
 
+import java.util.List;
+
+/**
+ * Created by zhangwei on 2015/6/27.
+ */
 public interface IUserService {
-	
-	/**
-	 * 
-	 * @param userInfo
-	 * @return
-	 */
-	public abstract UserInfo saveNewUser(UserInfo userInfo);
-
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
-	public abstract UserInfo findUserById(String id);
-
-	/**
-	 * 
-	 * @param userDAO
-	 */
-	public abstract void setUserDAO(IUserInfoDAO userDAO);
+    List<User> getUser(String name, String password);
 }
