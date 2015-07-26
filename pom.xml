@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>hellozw</groupId>
     <artifactId>hellozw</artifactId>
+    <!--war包用来发布的-->
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>hellozw Maven Webapp</name>
@@ -152,6 +153,12 @@
         </dependency>
         <!-- jackson -->
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.5.3</version>
@@ -166,7 +173,24 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.5.3</version>
         </dependency>
-
+        <!--servlet-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <!--freemarker-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>hellozw</finalName>

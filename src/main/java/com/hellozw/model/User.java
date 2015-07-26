@@ -16,6 +16,10 @@ public class User {
 
     private String email;
 
+    private int isActivate;
+
+    private String activeCode;
+
     private String password;
 
     private Timestamp createDt;
@@ -34,7 +38,7 @@ public class User {
         this.id = id;
     }
 
-    @Column(name = "name",length = 40)
+    @Column(name = "name", length = 40)
     public String getName() {
         return name;
     }
@@ -42,6 +46,7 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
     @Column(name = "email")
     public String getEmail() {
         return email;
@@ -76,5 +81,24 @@ public class User {
 
     public void setUpdateDt(Timestamp updateDt) {
         this.updateDt = updateDt;
+    }
+
+    @Column(name = "isActivate")
+    public int getIsActivate() {
+        return isActivate;
+    }
+
+
+    public void setIsActivate(int isActivate) {
+        this.isActivate = isActivate;
+    }
+
+    @Column(name = "activeCode")
+    public String getActiveCode() {
+        return activeCode;
+    }
+
+    public void setActiveCode(String activeCode) {
+        this.activeCode = activeCode;
     }
 }

@@ -35,4 +35,42 @@ public class UserHibernateDAO extends HibernateDaoSupport implements IUserDAO {
             return null;
         }
     }
+
+    public List<User> getUser(String activecode) {
+        try {
+            String sql = "from User u where u.activeCode=?";
+            return (List<User>) getHibernateTemplate().find(sql, activecode);
+        } catch (Exception e) {
+            System.out.println("getUser：" + e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * 添加用户
+     *
+     * @param user
+     * @return
+     */
+    public boolean insertUser(User user) {
+        try {
+            getHibernateTemplate().save(user);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        try {
+            getHibernateTemplate().update(user);
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return false;
+        }
+    }
 }
+

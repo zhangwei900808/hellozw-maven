@@ -9,4 +9,14 @@ import java.util.List;
  */
 public interface IUserService {
     List<User> getUser(String name, String password);
+
+    List<User> getUser(String activecode);
+
+    boolean insertUser(User user);
+
+    boolean updateUser(User user);
+
+    boolean validateEmail(String activecode);
+
+    boolean sendEmail(String username, String email, String password) throws Exception;
 }

@@ -71,7 +71,8 @@ public class PersonNavSpringImpl implements IPersonNavService {
 		}
 	}
 
-	@Override
+
+    @Override
 	public void updatePersonalNav(PersonalNav personalNav) {
 		try {
 			personNavDAO.updatePersonalNav(personalNav);

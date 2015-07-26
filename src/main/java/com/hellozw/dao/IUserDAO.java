@@ -9,4 +9,10 @@ import java.util.List;
  */
 public interface IUserDAO {
     List<User> getUser(String name, String password);
+
+    List<User> getUser(String activecode);
+
+    boolean insertUser(User user);
+
+    boolean updateUser(User user);
 }

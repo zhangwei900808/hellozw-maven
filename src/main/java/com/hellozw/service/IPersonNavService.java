@@ -47,4 +47,5 @@ public interface IPersonNavService {
 	 * @return
 	 */
 	int findPersonalNavOfLinkCount(PersonalNav personalNav);
+
 }

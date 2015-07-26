@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.hellozw.service.ILinkService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -18,8 +19,11 @@ public class NavigationController {
     private ILinkService linkService;
 
     @RequestMapping("/navigation.html")
-    public ModelAndView navigation(){
-        List<Link> links = linkService.FindByNavId("1");
-        return new ModelAndView("navigation/navigation");
+    public ModelAndView navigation(HttpSession session) {
+        Object user = session.getAttribute("user");
+        if (user != null) {
+            return new ModelAndView("navigation/navigation");
+        }
+        return new ModelAndView("redirect:/");
     }
 }

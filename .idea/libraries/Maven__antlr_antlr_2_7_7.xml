@@ -4,10 +4,10 @@
       <root url="jar://E:/Maven/maven-repo/antlr/antlr/2.7.7/antlr-2.7.7.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://E:/maven/maven-repo/antlr/antlr/2.7.7/antlr-2.7.7-javadoc.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/antlr/antlr/2.7.7/antlr-2.7.7-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://E:/maven/maven-repo/antlr/antlr/2.7.7/antlr-2.7.7-sources.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/antlr/antlr/2.7.7/antlr-2.7.7-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

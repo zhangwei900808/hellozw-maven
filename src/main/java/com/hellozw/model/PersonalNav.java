@@ -49,7 +49,7 @@ public class PersonalNav {
     }
 
     // 节点名称
-    @Column(name = "pId", length = 40)
+    @Column(name = "pid", length = 40)
     public String getPid() {
         return pid;
     }

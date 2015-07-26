@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - HelloZw@115.28.149.204 [2]" uuid="86bbc0be-32d3-4ed4-92fe-0b93e092dee6">
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>HelloZw.*</schema-pattern>
-      <default-schemas>HelloZw.*</default-schemas>
-    </data-source>
+    <data-source name="MySQL - HelloZw@115.28.149.204 [2]" uuid="86bbc0be-32d3-4ed4-92fe-0b93e092dee6" />
+    <data-source name="MySQL - Test@115.28.149.204" uuid="8e0038a4-af88-4e57-a582-7b099346985b" />
   </component>
 </project>
