@@ -7,7 +7,7 @@
       <root url="jar://E:/maven/maven-repo/org/sitemesh/sitemesh/3.0.0/sitemesh-3.0.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://E:/maven/maven-repo/org/sitemesh/sitemesh/3.0.0/sitemesh-3.0.0-sources.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/org/sitemesh/sitemesh/3.0.0/sitemesh-3.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

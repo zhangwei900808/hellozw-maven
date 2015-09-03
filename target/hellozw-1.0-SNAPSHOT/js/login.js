@@ -13,7 +13,7 @@ $(function () {
             password: password
         }, function (val) {
             if(val.success){
-                location.href="/navigation.html";
+                location.href="/navigation/navigation.html";
             }
             else{
                 alert('登录失败');

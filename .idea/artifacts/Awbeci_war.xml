@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Awbeci:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="hellozw.war">
+      <element id="artifact" artifact-name="Awbeci:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -18,12 +18,8 @@ public class NavigationController {
     @Autowired
     private ILinkService linkService;
 
-    @RequestMapping("/navigation.html")
-    public ModelAndView navigation(HttpSession session) {
-        Object user = session.getAttribute("user");
-        if (user != null) {
-            return new ModelAndView("navigation/navigation");
-        }
-        return new ModelAndView("redirect:/");
+    @RequestMapping("/navigation/navigation.html")
+    public ModelAndView navigation() {
+        return new ModelAndView("navigation/navigation");
     }
 }

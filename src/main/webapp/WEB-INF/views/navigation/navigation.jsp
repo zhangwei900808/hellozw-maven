@@ -1,68 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set value="${pageContext.request.contextPath}" var="path" scope="page"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <title>个性导航</title>
-    <link href="${path}/js/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link href="${path}/js/github/github.css" rel="stylesheet">
-    <link href="${path}/css/navigation.css" rel="stylesheet">
-    <script type="text/javascript" src="${path}/js/dragsort-0.5.2/jquery.dragsort-0.5.2.js"></script>
-    <script type="text/javascript" src="${path}/js/github/github.js"></script>
-    <script type="text/javascript" src="${path}/js/dragsort-0.5.2/jquery.dragsort-0.5.2.min.js"></script>
-    <script type="text/javascript" src="${path}/js/navigation.js"></script>
+    <link href="/js/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/navigation.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/dragsort-0.5.2/jquery.dragsort-0.5.2.js"></script>
+    <script type="text/javascript" src="/js/dragsort-0.5.2/jquery.dragsort-0.5.2.min.js"></script>
+    <script type="text/javascript" src="/js/navigation.js"></script>
+    <script>
+        $(function () {
+            $("#shownav").dropmenu({
+                color: 'blue',
+                title: 'please choose item',
+                width: '200px',
+                showFilter: false
+            });
+        })
+    </script>
 </head>
 <body>
 <div class="container" id="container-main">
     <div class="row">
-        <div class="tool">
-            <div class="btn-group">
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-expanded="false">
-                    <span class="octicon octicon-gear"></span>Edit <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        <div class="dropmenu">
+            <button id="shownav" class="btn btn-default" data-toggle="dropmenu" aria-expanded="false"><span
+                    class="octicon octicon-check"></span>测试<b class="caret"></b></button>
 
+            <div class="dropmenu-panel">
+                <div class="dropmenu-header">
+                    <span class="dropmenu-title">标题</span>
+                    <span class="octicon octicon-x header-close" role="button" aria-label="Close"></span>
+                </div>
+                <div class="dropmenu-filters">
+                    <div class="dropmenu-filter">
+                        <input type="text" class="filter-input" placeholder="请输入过滤内容">
+                    </div>
+                </div>
+                <div class="dropmenu-items">
+                    <div class="dropmenu-item">
+                        <span class="item-icon"></span>
+                        <span class="item-content">
+                            <div class="item-lable">测试</div>
+                            <div class="item-note">这是备注内容</div>
+                        </span>
+                    </div>
+                    <div class="dropmenu-item">
+                        <span class="item-icon octicon octicon-check"></span>
+                        <span class="item-content">
+                            <div class="item-lable">测试</div>
+                            <div class="item-note">这是备注内容</div>
+                        </span>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
     <div class="row">
         <div class="col-lg-3">
-            <div id="js-sidebar" class="sidebar-shell">
-                <div class="js-toggle-list sidebar-module expandable">
-                    <ul>
-                        <li id="home" class="js-topic js-current">
-                            <h3><a href="#" class="js-expand-btn arrow-btn expanded" data-proofer-ignore=""></a>
-                                <a href="/v3/">Java</a>
-                            </h3>
-                            <ul class="js-guides">
-                                <li><a href="/v3/media/">Struts</a></li>
-                                <li><a href="/v3/oauth/">Hibernate</a></li>
-                                <li><a href="/v3/oauth_authorizations/">Mybatis</a></li>
-                                <li><a href="/v3/auth/">Spring</a></li>
-                            </ul>
-                        </li>
-                        <li id="ios" class="js-topic">
-                            <h3><a href="#" class="js-expand-btn arrow-btn" data-proofer-ignore=""></a>
-                                <a href="/v3/">Java</a></h3>
-                            <ul class="js-guides">
-                                <li><a href="/v3/media/">Struts</a></li>
-                                <li><a href="/v3/oauth/">Hibernate</a></li>
-                                <li><a href="/v3/oauth_authorizations/">Mybatis</a></li>
-                                <li><a href="/v3/auth/">Spring</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           
         </div>
         <div class="col-lg-9">
 
@@ -166,7 +162,8 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">

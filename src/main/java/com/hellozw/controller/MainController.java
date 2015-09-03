@@ -5,14 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by zhangwei on 2015/7/1.
@@ -25,19 +21,16 @@ public class MainController {
 
     /**
      * 首页页面
-     * @param session
-     * @return
      */
-    @RequestMapping("")
-    public ModelAndView index(HttpSession session) {
-        Object data = session.getAttribute("user");
-        if (data != null) {
-            return new ModelAndView("redirect:/navigation.html");
+    @RequestMapping("/")
+    public String index(Model model, HttpSession session) {
+        if (session.getAttribute("user") == null) {
+            return "main/index";
         } else {
-            return new ModelAndView("main/index");
+            return "/navigation/navigation";
         }
+    }
 
-}
     /**
      * 注册
      *
@@ -52,13 +45,13 @@ public class MainController {
     public ModelAndView region(String username, String email, String password, HttpSession session) throws Exception {
         Object sessionuser = session.getAttribute("user");
         if (sessionuser != null) {
-            return new ModelAndView("redirect:/navigation.html");
+            return new ModelAndView("redirect:/navigation/navigation.html");
         }
         boolean data = userService.sendEmail(username, email, password);
         if (data) {
             //设置session
             session.setAttribute("user", username);
-            return new ModelAndView("redirect:/navigation.html");
+            return new ModelAndView("redirect:/navigation/navigation.html");
         } else {
             //邮件发送失败
             return new ModelAndView("redirect:/");

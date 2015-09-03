@@ -1,5 +1,5 @@
 $(function () {
     $("#showlink ul").dragsort({});
 
-    $('#myModal').modal()
+   // $('#myModal').modal()
 });
