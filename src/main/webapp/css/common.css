@@ -63,3 +63,7 @@ body {
     position: absolute;
     left: 50%;
 }
+
+.dropdown > .dropmenu{
+    padding: 10px 0;
+}

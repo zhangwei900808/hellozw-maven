@@ -59,23 +59,54 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle"
-                       data-toggle="dropdown"><%=request.getSession().getAttribute("user")%> <span class="caret"></span></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li>
-                            <div><span style="padding-left: 10px;color:#666;font-size: 10px">下拉header</span></div>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#"><span style="display: inline-block">Action</span>
-                            <span style="display: block;color:#ccc;padding-left: 15px;font-size: 10px">这是测试数据</span>
-                        </a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
+                    <div class="dropmenu">
+                        <a id="shownav3" href="#" class="weibtn" data-toggle="dropmenu" aria-expanded="false">
+                            <%=request.getSession().getAttribute("user")%><b class="caret"></b></a>
+
+                        <div class="dropmenu-panel">
+                            <div class="dropmenu-header">
+                                <span class="dropmenu-title">标题</span>
+                                <span class="octicon octicon-x header-close" role="button" aria-label="Close"></span>
+                            </div>
+                            <div class="dropmenu-filters">
+                                <div class="dropmenu-filter">
+                                    <input type="text" class="filter-input" placeholder="请输入过滤内容">
+                                </div>
+                            </div>
+                            <div class="dropmenu-items">
+                                <div class="dropmenu-item">
+                                    <span class="item-icon"></span>
+                                    <span class="item-content">
+                                        <div class="item-lable">个人资料</div>
+                                    </span>
+                                </div>
+                                <div class="dropmenu-item">
+                                    <span class="item-icon"></span>
+                                    <span class="item-content">
+                                        <div class="item-lable">探索</div>
+                                    </span>
+                                </div>
+                                <div class="dropmenu-item">
+                                    <span class="item-icon"></span>
+                                    <span class="item-content">
+                                        <div class="item-lable">帮助</div>
+                                    </span>
+                                </div>
+                                <div class="dropmenu-item">
+                                    <span class="item-icon"></span>
+                                    <span class="item-content">
+                                        <div class="item-lable">设置</div>
+                                    </span>
+                                </div>
+                                <div class="dropmenu-item">
+                                    <span class="item-icon"></span>
+                                    <span class="item-content">
+                                        <div class="item-lable">退出</div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
             <% } else {%>

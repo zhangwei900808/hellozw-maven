@@ -1,3 +1,11 @@
+.wei-col-lg-3 {
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.wei-col-lg-9 {
+    padding-left: 0;
+}
 
 .zw-glyphicon {
     float: right;
@@ -58,13 +66,13 @@ a.list-group-item:hover {
     display: none;
 }
 
-
 .showlinktable {
     width: 100%;
     height: 100%;
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 #showlink {
     display: inline-block;
     width: 100%;
@@ -74,22 +82,24 @@ a.list-group-item:hover {
 
 #showlink ul li {
     float: left;
-
 }
-#showlink ul li div{
+
+#showlink ul li div {
     display: block;
-    width: 167px;
+    width: 195px;
     height: 30px;
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 5px;
-    margin:1px;
+    margin: 1px;
 
 }
+
 #showlink ul li div a {
 
     text-decoration: none;
 }
+
 .showlinktable tr td {
     padding: 5px;
     border: 1px solid #ddd;
@@ -98,9 +108,11 @@ a.list-group-item:hover {
 .showlinktable tr td a {
     font-size: 14px;
 }
-.link-tools{
+
+.link-tools {
     height: 30px;
 }
+
 .myul {
     display: table;
     width: 100%;
@@ -121,6 +133,11 @@ a.list-group-item:hover {
 .leftcontent {
     margin-top: 20px;
 }
-.octicon-edit{
-    width:27px;
+
+.octicon-edit {
+    width: 27px;
+}
+
+.list-group-item {
+    padding: 5px 15px;
 }

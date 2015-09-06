@@ -5,26 +5,18 @@
 <head>
     <title>个性导航</title>
     <link href="/js/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="/js/bootstrap-treeview/src/css/bootstrap-treeview.css" rel="stylesheet">
     <link href="/css/navigation.css" rel="stylesheet">
     <script type="text/javascript" src="/js/dragsort-0.5.2/jquery.dragsort-0.5.2.js"></script>
     <script type="text/javascript" src="/js/dragsort-0.5.2/jquery.dragsort-0.5.2.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-treeview/src/js/bootstrap-treeview.js"></script>
     <script type="text/javascript" src="/js/navigation.js"></script>
-    <script>
-        $(function () {
-            $("#shownav").dropmenu({
-                color: 'blue',
-                title: 'please choose item',
-                width: '200px',
-                showFilter: false
-            });
-        })
-    </script>
 </head>
 <body>
 <div class="container" id="container-main">
     <div class="row">
         <div class="dropmenu">
-            <button id="shownav" class="btn btn-default" data-toggle="dropmenu" aria-expanded="false"><span
+            <button id="shownav" class="btn btn-default weibtn" data-toggle="dropmenu" aria-expanded="false"><span
                     class="octicon octicon-check"></span>测试<b class="caret"></b></button>
 
             <div class="dropmenu-panel">
@@ -57,10 +49,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3">
-           
+        <div class="col-lg-3 wei-col-lg-3">
+            <div id="treeview5" class=""></div>
+
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 wei-col-lg-9">
 
             <div id="showlink">
                 <ul>

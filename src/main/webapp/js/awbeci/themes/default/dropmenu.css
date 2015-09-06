@@ -1,5 +1,5 @@
-/*这个是重载bootstrapcss*/
-.btn {
+
+.weibtn {
     padding: 3px 12px;
 }
 
@@ -12,19 +12,18 @@
     position: relative;
 }
 
-.dropmenu > a{
-    color:#767676;
+.dropmenu > a {
+    color: #767676;
     text-decoration: none;
 }
 
-.dropmenu .active{
-    color:#333;
+.dropmenu .active {
+    color: #333;
 }
 
 .dropmenu-panel {
     position: absolute;
     top: 100%;
-    left: 0;
     z-index: 1000;
     display: none;
     float: left;
@@ -40,6 +39,49 @@
     border: 1px solid rgba(200, 200, 200, 0.4);
     border-radius: 4px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropmenu-panel-caret:before {
+    position: absolute;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.dropmenu-panel-caret:after {
+    position: absolute;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.dropmenu-panel-caret-left:before {
+    top: -7px;
+    left: 10px;
+}
+
+.dropmenu-panel-caret-left:after {
+    top: -6px;
+    left: 11px;
+}
+
+.dropmenu-panel-caret-right:before {
+    top: -7px;
+    right: 10px;
+}
+
+.dropmenu-panel-caret-right:after {
+    top: -6px;
+    right: 11px;
+}
+
+.right {
+    right: -2px;
 }
 
 .dropmenu-header {
@@ -84,23 +126,25 @@
     border-radius: 3px;
 }
 
-.dropmenu-items{
+.dropmenu-items {
     position: relative;
 }
 
 .dropmenu-item {
     width: 100%;
     cursor: pointer;
-    border-bottom: 1px solid #eee;
     overflow: hidden;
     color: inherit;
     font-weight: 400;
     white-space: nowrap;
 }
 
-.dropmenu-item:last-child {
+.dropmenu-item-border {
+    border-bottom: 1px solid #eee;
+}
+
+.dropmenu-item-border:last-child {
     border-bottom: none;
-    border-radius: 0 0 4px 4px;
 }
 
 .dropmenu-item-selected {
@@ -109,7 +153,7 @@
 }
 
 .dropmenu-item-selected .item-lable,
-.dropmenu-item-selected .item-note{
+.dropmenu-item-selected .item-note {
     color: #fff;
     background-color: #4078c0;
 }
@@ -129,7 +173,7 @@
 }
 
 .item-lable {
-    color:#666;
+    color: #666;
     font-weight: bold;
 }
 

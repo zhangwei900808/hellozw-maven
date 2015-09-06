@@ -29,14 +29,61 @@
         },
         _set: function () {
             var $parent = this.$element.parent();
-            if (this.options.showFilter) {
-                $parent.find('.dropmenu-filters').show()
+            $parent.find('.dropmenu-panel').width(this.options.width).addClass(this.options.position);
+            $parent.find('.dropmenu-title').text(this.options.title);
+            $parent.find('.item-content').css({'padding': this.options.padding});
+            if (this.options.display == 'complex') {
+                if (this.options.showFilter) {
+                    $parent.find('.dropmenu-filters').show();
+                }
+                else {
+                    $parent.find('.dropmenu-filters').hide();
+                }
+
+                if (this.options.showHeader) {
+                    $parent.find('.dropmenu-header').show();
+                    //$parent.find('.dropmenu-panel').
+                }
+                else {
+                    $parent.find('.dropmenu-header').hide();
+                }
+                $parent.find('.dropmenu-item:last-child').css({
+                    'border-bottom': 'none',
+                    'border-radius': '0 0 4px 4px'
+                })
+
+            }
+
+            if (this.options.display == 'simple') {
+                $parent.find('.dropmenu-filters').hide();
+                $parent.find('.dropmenu-header').hide();
+                $parent.find('.dropmenu-items').css({'padding': '5px 0'})
+            }
+
+            if (this.options.fontWeight) {
+                $parent.find('.item-lable').css({'font-weight': 'bold'})
             }
             else {
-                $parent.find('.dropmenu-filters').hide()
+                $parent.find('.item-lable').css({'font-weight': 'normal'})
             }
-            $parent.find('.dropmenu-panel').width(this.options.width);
-            $parent.find('.dropmenu-title').text(this.options.title);
+
+            if (this.options.showBorder) {
+                $parent.find('.dropmenu-item').addClass('dropmenu-item-border');
+            }
+            else {
+                $parent.find('.dropmenu-item').removeClass('dropmenu-item-border');
+            }
+
+            if (this.options.showCaret && this.options.position == 'left') {
+                $parent.find('.dropmenu-panel').addClass('dropmenu-panel-caret dropmenu-panel-caret-left');
+            }
+            else if (this.options.showCaret && this.options.position == 'right') {
+                $parent.find('.dropmenu-panel').addClass('dropmenu-panel-caret dropmenu-panel-caret-right');
+            }
+            else {
+                $parent.find('.dropmenu-panel').removeClass('dropmenu-panel-caret dropmenu-panel-caret-left dropmenu-panel-caret-right');
+            }
+
             return this;
         },
         _closeMenu: function (e) {
@@ -72,8 +119,9 @@
         },
         _onListener: function () {
             $('.dropmenu-item').hover(this._mouseHover);
+            $(this.$element).on('click.wei.dropmenu', this._toggle)
         }
-    };
+    }
 
     var old = $.fn.dropmenu;
 
@@ -97,7 +145,14 @@
     $.fn.dropmenu.defaults = {
         width: '300px',
         title: '标题',
-        showFilter: false
+        fontWeight: true,
+        position: 'left',
+        display: 'simple',//complex
+        padding: '8px',
+        showCaret: false,
+        showBorder: true,
+        showFilter: false,
+        showHeader: true
     };
 
     $.fn.dropmenu.Constructor = DropMenu;
@@ -108,7 +163,6 @@
     }
 
     $(document)
-        .on('click.wei.dropmenu', DropMenu.prototype._closeMenu2)
-        .on('click.wei.dropmenu', toggle, DropMenu.prototype._toggle);
-
-})(jQuery);
+        .on('click.wei.dropmenu', DropMenu.prototype._closeMenu2);
+})
+(jQuery);
