@@ -7,8 +7,9 @@
 }
 
 body {
-    font: 14px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !important;
     color: #333;
+    /*font-family:'微软雅黑','Helvetica Neue',sans-serif,SimHei;*/
+    font-size: 16px;
     background-color: #fff;
     color: #333;
 }
@@ -66,4 +67,18 @@ body {
 
 .dropdown > .dropmenu{
     padding: 10px 0;
+}
+.navbar{
+    line-height: 20px;
+}
+.wei-icon{
+    padding: 0 5px 0 0;
+    font-size: 14px;
+}
+.from-group-sm .form-control{
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 200px;
 }

@@ -91,7 +91,7 @@
                 var $this = $(this);
                 var $parent = $this.parent();
                 if (!$parent.hasClass('open')) return;
-                if (e.isDefaultPrevented()) return;
+                //if (e.isDefaultPrevented()) return;
 
                 $this.attr('aria-expanded', 'false').removeClass('active');
                 $parent.removeClass('open');

@@ -10,18 +10,18 @@
 <body>
 <div class="container" id="logincontainer">
     <div>
-        <div class="panel panel-success">
+        <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">登录</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label>用户名或者邮箱</label>
+                    用户名或者邮箱
                     <input type="email"  class="form-control" id="username" data-toggle="tooltip" data-placement="bottom"
                            title="请输入用户名或者邮箱" >
                 </div>
                 <div class="form-group">
-                    <label>密码</label>
+                    密码
                     <input type="password" class="form-control" id="password" data-toggle="tooltip" data-placement="bottom"
                            title="请输入密码">
                 </div>

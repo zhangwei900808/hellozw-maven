@@ -1,6 +1,8 @@
+#container-main{
+    margin-top: -10px;
+}
 .wei-col-lg-3 {
     padding-left: 0;
-    margin-top: 20px;
 }
 
 .wei-col-lg-9 {
@@ -59,7 +61,6 @@ a.list-group-item:hover {
 }
 
 .arrow {
-    display: none !important;
 }
 
 .show-nav-list {
@@ -73,11 +74,46 @@ a.list-group-item:hover {
     border-collapse: collapse;
 }
 
+#link-head {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    border-bottom: none;
+    background: #e6f1f6;
+    text-align: right;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+}
+
+.link-head-left {
+    float: left;
+}
+
+.link-head-right {
+}
+.searchbtn{
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+ }
+
+.searchbtn:focus{
+    outline: 0;
+}
+
+.searchbtn:hover{
+    border-color: #adadad;
+}
+
 #showlink {
     display: inline-block;
+    background: #f9f9f9;
+    border-top: none;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
     width: 100%;
     height: 100%;
-    margin-top: 20px;
 }
 
 #showlink ul li {
@@ -86,13 +122,13 @@ a.list-group-item:hover {
 
 #showlink ul li div {
     display: block;
-    width: 195px;
-    height: 30px;
+    width: 205px;
+    /* height: 30px; */
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 5px;
-    margin: 1px;
-
+    margin: 5px 5px 5px 5px;
+    background: #fff;
 }
 
 #showlink ul li div a {
@@ -140,4 +176,76 @@ a.list-group-item:hover {
 
 .list-group-item {
     padding: 5px 15px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.treeview-head {
+    /*height: 100px;*/
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-weight: bold;
+    border-bottom: none;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    font-size: 14px;
+}
+
+.link-head{
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-weight: bold;
+    border-bottom: none;
+    padding: 4px 10px;
+    border-radius: 4px 4px 0 0;
+    font-size: 14px;
+}
+
+.treeview-head-icon {
+    padding: 0 10px;
+}
+
+.treeview-head-right {
+    float: right;
+}
+
+.treeview-head-right a{
+    color:#000;
+}
+
+.treeview-head-right a:hover{
+    text-decoration: none;
+    color:#4078c0;
+}
+
+.treeview-head-icon-right {
+    line-height: 1.42857;
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.input-group {
+}
+
+.btn-search{
+    padding: 5px 0;
+}
+
+.link-head-span{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.modal-body{
+    min-height: 480px;
+    font-size: 14px;
+    padding: 1px;
+    margin: -1px;
+}
+.tooltip{
+    padding: 100px;
 }

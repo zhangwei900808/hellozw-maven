@@ -4,10 +4,10 @@
       <root url="jar://E:/Maven/maven-repo/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://E:/maven/maven-repo/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE-javadoc.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://E:/maven/maven-repo/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE-sources.jar!/" />
+      <root url="jar://E:/Maven/maven-repo/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

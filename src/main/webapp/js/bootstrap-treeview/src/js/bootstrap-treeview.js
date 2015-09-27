@@ -679,7 +679,7 @@
 
 		if (this.options.onhoverColor) {
 			style += '.node-' + this.elementId + ':not(.node-disabled):hover{' +
-				'background-color:' + this.options.onhoverColor + ';' +
+				'background-color:' + this.options.onhoverColor + ';color:#fff' +
 			'}';
 		}
 

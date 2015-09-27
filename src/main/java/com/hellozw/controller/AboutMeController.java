@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class AboutMeController {
-    @RequestMapping("/aboutme.html")
-    public ModelAndView navigation(HttpSession session) {
+    @RequestMapping("/aboutme/aboutme.html")
+    public ModelAndView aboutme(HttpSession session) {
         Object user = session.getAttribute("user");
         if (user != null) {
             return new ModelAndView("aboutme/aboutme");

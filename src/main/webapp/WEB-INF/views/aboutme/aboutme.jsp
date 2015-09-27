@@ -25,10 +25,10 @@
             </div>
             <h5>@zhangwei0808</h5>
             <h6>
-                读书. 设计师. 合肥<br> <a href="https://www.facebook.com/weiruan.zw?ref=tn_tnmn" target="_blank">
-                <img alt="facebook" src="images/fb.png" width="16" height="16"></a> <a href="http://weibo.com/waishow"
-                                                                                       target="_blank">
-                <img alt="sina" src="images/sina.png"></a>
+                读书. 设计师. 合肥<br> <a href="https://www.facebook.com/weiruan.zw?ref=tn_tnmn">
+                <img alt="facebook" src="/images/fb.png" width="16" height="16"></a> <a href="http://weibo.com/waishow">
+                <img alt="sina" src="/images/sina.png"></a>
+                <a href="https://github.com/zhangwei900808"><img src="/images/github.png" alt="github"></a>
 
             </h6>
         </div>

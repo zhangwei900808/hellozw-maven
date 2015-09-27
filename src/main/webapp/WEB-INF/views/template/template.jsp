@@ -12,6 +12,7 @@
     <link href="/css/template.css" rel="stylesheet">
     <link href="/js/awbeci/themes/default/dropmenu.css" rel="stylesheet">
     <link href="/js/octicons/octicons.css" rel="stylesheet">
+    <link href="/js/font-awesome/font-awesome.min.css" rel="stylesheet">
     <link href="http://static.bootcss.com/www/assets/ico/favicon.png" rel="shortcut icon">
     <link href="/css/common.css" rel="stylesheet">
     <script src="/js/jquery-1.11.2.min.js"></script>
@@ -37,14 +38,6 @@
         <div class="navbar-header">
             <a class="navbar-brand nav-logo" href="/">Awbeci</a>
 
-            <form id="querylink" action="http://www.baidu.com/baidu"
-                  target="_blank" class="input-group input-group-sm">
-                <input name="tn" type="hidden" value="baidu"> <input
-                    id="linktxt" name="word" baiduSug="1" type="text"
-                    class="form-control" placeholder="请输入查询内容"> <span
-                    class="input-group-btn">
-					</span>
-            </form>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-01">
@@ -55,7 +48,7 @@
                 <li><a href="/navigation/navigation.html" class="header-nav-link">我的博客</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">资源</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">社交</a></li>
-                <li><a href="/navigation/navigation.html" class="header-nav-link">关于我</a></li>
+                <li><a href="/aboutme/aboutme.html" class="header-nav-link">关于我</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -114,7 +107,7 @@
                 <li><a href="/navigation/navigation.html" class="header-nav-link">探索发现</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">功能特性</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">站点博客</a></li>
-                <li><a href="/navigation/navigation.html" class="header-nav-link">关于</a></li>
+                <li><a href="/aboutme/aboutme.html" class="header-nav-link">关于</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
