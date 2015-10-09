@@ -19,7 +19,11 @@ public class NavigationController {
     private ILinkService linkService;
 
     @RequestMapping("/navigation/navigation.html")
-    public ModelAndView navigation() {
-        return new ModelAndView("navigation/navigation");
+    public String navigation(HttpSession session) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/";
+        } else {
+            return "navigation/navigation";
+        }
     }
 }

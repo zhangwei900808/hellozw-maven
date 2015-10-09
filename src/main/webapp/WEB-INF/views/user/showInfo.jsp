@@ -8,7 +8,7 @@
 </head>
 <body>
 
-     姓名： ${userInfo.uname}
+
 
 </body>
 </html>

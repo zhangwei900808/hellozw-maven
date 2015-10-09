@@ -18,28 +18,42 @@ import java.util.Set;
 @Entity
 @Table(name = "PersonalNav")
 public class PersonalNav {
-    private String id;
-
-    private String pid;
-
-    private String name;
-
-    private int type;
-
-    private int level;
-
-    private Timestamp createDt;
-
-    private Timestamp updateDt;
-
-    //链接列表(一对多)
-    private Set<Link> links = new HashSet<Link>();
 
     // id
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
     @Column(name = "id", length = 40)
+    private String id;
+
+    // 节点名称
+    @Column(name = "name", length = 40)
+    private String name;
+
+    // 节点类型
+    @Column(name = "type")
+    private int type;
+
+    //显示顺序
+    @Column(name = "level")
+    private int level;
+
+    // 创建时间
+    @Column(name = "createDt")
+    private Timestamp createDt;
+
+    // 更新时间
+    @Column(name = "updateDt")
+    private Timestamp updateDt;
+
+    //链接列表(一对多)
+    //级联操作：cascade = CascadeType.ALL
+    //延迟加载：fetch = FetchType.LAZY
+    //映射：mappedBy = "category"
+    //一对多方式
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalNav")
+    private Set<Link> links = new HashSet<Link>();
+
     public String getId() {
         return id;
     }
@@ -48,18 +62,6 @@ public class PersonalNav {
         this.id = id;
     }
 
-    // 节点名称
-    @Column(name = "pid", length = 40)
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pId) {
-        this.pid = pId;
-    }
-
-    // 节点名称
-    @Column(name = "name", length = 40)
     public String getName() {
         return name;
     }
@@ -68,8 +70,6 @@ public class PersonalNav {
         this.name = name;
     }
 
-    // 节点类型
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -78,8 +78,6 @@ public class PersonalNav {
         this.type = type;
     }
 
-    //显示顺序
-    @Column(name = "level")
     public int getLevel() {
         return level;
     }
@@ -88,8 +86,6 @@ public class PersonalNav {
         this.level = level;
     }
 
-    // 创建时间
-    @Column(name = "createDt")
     public Timestamp getCreateDt() {
         return createDt;
     }
@@ -98,8 +94,6 @@ public class PersonalNav {
         this.createDt = createDt;
     }
 
-    // 更新时间
-    @Column(name = "updateDt")
     public Timestamp getUpdateDt() {
         return updateDt;
     }
@@ -108,11 +102,6 @@ public class PersonalNav {
         this.updateDt = updateDt;
     }
 
-    //级联操作：cascade = CascadeType.ALL
-    //延迟加载：fetch = FetchType.LAZY
-    //映射：mappedBy = "category"
-    //一对多方式
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalNav")
     public Set<Link> getLinks() {
         return links;
     }

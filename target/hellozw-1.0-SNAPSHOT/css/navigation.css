@@ -1,6 +1,3 @@
-#container-main{
-    margin-top: -10px;
-}
 .wei-col-lg-3 {
     padding-left: 0;
 }
@@ -41,7 +38,7 @@ a.list-group-item:hover {
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     border: none;
-    border-bottom: 2px solid #d26911;
+    border-bottom: 2px solid #428bca;
 }
 
 .zwinput {
@@ -92,28 +89,28 @@ a.list-group-item:hover {
 
 .link-head-right {
 }
-.searchbtn{
+
+.searchbtn {
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
- }
+}
 
-.searchbtn:focus{
+.searchbtn:focus {
     outline: 0;
 }
 
-.searchbtn:hover{
+.searchbtn:hover {
     border-color: #adadad;
 }
 
 #showlink {
     display: inline-block;
-    background: #f9f9f9;
-    border-top: none;
-    border: 1px solid #ddd;
-    border-radius: 0 0 4px 4px;
     width: 100%;
     height: 100%;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    padding: 4px;
 }
 
 #showlink ul li {
@@ -122,12 +119,11 @@ a.list-group-item:hover {
 
 #showlink ul li div {
     display: block;
-    width: 205px;
-    /* height: 30px; */
+    width: 286px;
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 5px;
-    margin: 5px 5px 5px 5px;
+    margin: 4px;
     background: #fff;
 }
 
@@ -183,8 +179,8 @@ a.list-group-item:hover {
     border-top-right-radius: 0;
 }
 
+/*原来的写法*/
 .treeview-head {
-    /*height: 100px;*/
     border: 1px solid #ddd;
     background: #f9f9f9;
     font-weight: bold;
@@ -194,7 +190,7 @@ a.list-group-item:hover {
     font-size: 14px;
 }
 
-.link-head{
+.link-head {
     border: 1px solid #ddd;
     background: #f9f9f9;
     font-weight: bold;
@@ -212,13 +208,13 @@ a.list-group-item:hover {
     float: right;
 }
 
-.treeview-head-right a{
-    color:#000;
+.treeview-head-right a {
+    text-decoration: none;
+    color: #000;
 }
 
-.treeview-head-right a:hover{
-    text-decoration: none;
-    color:#4078c0;
+.treeview-head-right a:hover {
+    color: #4078c0;
 }
 
 .treeview-head-icon-right {
@@ -230,22 +226,100 @@ a.list-group-item:hover {
 .input-group {
 }
 
-.btn-search{
+/*右边链接*/
+.btn-search {
     padding: 5px 0;
 }
 
-.link-head-span{
+.link-head-span {
     display: inline-block;
     vertical-align: middle;
     padding-left: 10px;
 }
 
-.modal-body{
+.modal-body {
     min-height: 480px;
     font-size: 14px;
     padding: 1px;
     margin: -1px;
 }
-.tooltip{
-    padding: 100px;
+
+/*编辑pencil*/
+.list-group-item {
+    position: relative;
+}
+
+.editnode {
+    color: #3C3C3C;
+}
+
+.editicon {
+    position: absolute;
+    right: 45px;
+    top: 8px;
+}
+
+.delicon {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}
+
+.editnode:hover {
+    color: #4183c4;
+}
+
+/*编辑框*/
+.editdlg {
+    font-size: 14px;
+    display: none;
+    position: absolute;
+    background: #f5f5f5;
+    width: 287px;
+    height: 124px;
+    border: 1px solid #ddd;
+    z-index: 999;
+    padding: 15px;
+}
+
+.editlinkdlg {
+    font-size: 14px;
+    display: none;
+    position: absolute;
+    background: #f5f5f5;
+    width: 286px;
+    height: 180px;
+    border: 1px solid #ddd;
+    z-index: 999;
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+/*链接编辑样式*/
+.linkedit {
+    color: #3C3C3C;
+}
+
+.linkedit:hover {
+    cursor: pointer;
+    color: #4183c4;
+}
+
+.linkediticon {
+    position: absolute;
+    right: 30px;
+    top: 8px;
+}
+
+.linkdelicon {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+
+.showlinkicon {
+    position: relative;
 }

@@ -27,7 +27,16 @@ public class MainController {
         if (session.getAttribute("user") == null) {
             return "main/index";
         } else {
-            return "/navigation/navigation";
+            return "/main/main";
+        }
+    }
+
+    @RequestMapping("/main/main.html")
+    public String main(Model model, HttpSession session) {
+        if (session.getAttribute("user") == null) {
+            return "main/index";
+        } else {
+            return "/main/main";
         }
     }
 
@@ -45,13 +54,13 @@ public class MainController {
     public ModelAndView region(String username, String email, String password, HttpSession session) throws Exception {
         Object sessionuser = session.getAttribute("user");
         if (sessionuser != null) {
-            return new ModelAndView("redirect:/navigation/navigation.html");
+            return new ModelAndView("redirect:/main/main.html");
         }
         boolean data = userService.sendEmail(username, email, password);
         if (data) {
             //设置session
             session.setAttribute("user", username);
-            return new ModelAndView("redirect:/navigation/navigation.html");
+            return new ModelAndView("redirect:/main/main.html");
         } else {
             //邮件发送失败
             return new ModelAndView("redirect:/");

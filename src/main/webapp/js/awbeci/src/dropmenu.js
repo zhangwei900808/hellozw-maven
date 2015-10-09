@@ -32,7 +32,7 @@
             $parent.find('.dropmenu-panel').width(this.options.width).addClass(this.options.position);
             $parent.find('.dropmenu-title').text(this.options.title);
             $parent.find('.item-content').css({'padding': this.options.padding});
-            if (this.options.display == 'complex') {
+            if (this.options.display == 'selection') {
                 if (this.options.showFilter) {
                     $parent.find('.dropmenu-filters').show();
                 }
@@ -54,7 +54,7 @@
 
             }
 
-            if (this.options.display == 'simple') {
+            if (this.options.display == 'navigation') {
                 $parent.find('.dropmenu-filters').hide();
                 $parent.find('.dropmenu-header').hide();
                 $parent.find('.dropmenu-items').css({'padding': '5px 0'})
@@ -83,7 +83,7 @@
             else {
                 $parent.find('.dropmenu-panel').removeClass('dropmenu-panel-caret dropmenu-panel-caret-left dropmenu-panel-caret-right');
             }
-
+            $parent.find('.item-lable').css({'font-size': this.options.fontSize})
             return this;
         },
         _closeMenu: function (e) {
@@ -146,6 +146,7 @@
         width: '300px',
         title: '标题',
         fontWeight: true,
+        fontSize: '14px',
         position: 'left',
         display: 'simple',//complex
         padding: '8px',

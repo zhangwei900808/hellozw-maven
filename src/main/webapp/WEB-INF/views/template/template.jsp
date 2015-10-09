@@ -15,9 +15,11 @@
     <link href="/js/font-awesome/font-awesome.min.css" rel="stylesheet">
     <link href="http://static.bootcss.com/www/assets/ico/favicon.png" rel="shortcut icon">
     <link href="/css/common.css" rel="stylesheet">
-    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/js/Bootstrap/js/modal.js"></script>
+    <script type="text/javascript" src="/js/Bootstrap/js/tooltip.js"></script>
     <script type="text/javascript" src="/js/awbeci/src/dropmenu.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="/js/views/common.js"></script>
     <sitemesh:write property="head"/>
     <%if (request.getSession().getAttribute("user") != null) {%>
     <style type="text/css">
@@ -41,11 +43,11 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-01">
-
             <% if (request.getSession().getAttribute("user") != null) { %>
             <h1 class="logo"><span class="mega-octicon octicon-mark-github"></span></h1>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/navigation/navigation.html" class="header-nav-link">我的博客</a></li>
+                <li><a href="/main/main.html" class="header-nav-link">首页</a></li>
+                <li><a href="/navigation/navigation.html" class="header-nav-link">我的云址</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">资源</a></li>
                 <li><a href="/navigation/navigation.html" class="header-nav-link">社交</a></li>
                 <li><a href="/aboutme/aboutme.html" class="header-nav-link">关于我</a></li>
@@ -54,7 +56,10 @@
                 <li class="dropdown">
                     <div class="dropmenu">
                         <a id="shownav3" href="#" class="weibtn" data-toggle="dropmenu" aria-expanded="false">
-                            <%=request.getSession().getAttribute("user")%><b class="caret"></b></a>
+                            <img alt="@zhangwei900808" class="avatar" height="20"
+                                 src="https://avatars3.githubusercontent.com/u/4385154?v=3&amp;s=40" width="20">
+                            <b class="caret"></b>
+                        </a>
 
                         <div class="dropmenu-panel">
                             <div class="dropmenu-header">
@@ -94,7 +99,7 @@
                                 <div class="dropmenu-item">
                                     <span class="item-icon"></span>
                                     <span class="item-content">
-                                        <div class="item-lable">退出</div>
+                                        <div class="item-lable" id="quit">退出</div>
                                     </span>
                                 </div>
                             </div>
@@ -133,7 +138,6 @@
         <span>©2015 hellozw <a href="http://www.miitbeian.gov.cn/">皖ICP备14011269号-1</a></span>
     </div>
 </footer>
-<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
 <!-- /menu -->
 </body>
 </html>

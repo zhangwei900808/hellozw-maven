@@ -4,7 +4,7 @@
 $(function () {
     $("#shownav3").dropmenu({
         title: '标题',
-        display: 'simple',
+        display: 'navigation',
         fontWeight: false,
         showBorder: false,
         showCaret: true,
@@ -12,6 +12,10 @@ $(function () {
         width: '180px',
         padding:'4px'
     });
+
+    $('#quit').on('click',function(event,data){
+        alert(1)
+    })
 });
 
 function login() {

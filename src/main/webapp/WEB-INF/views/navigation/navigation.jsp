@@ -8,33 +8,42 @@
     <link href="/js/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="/js/metisMenu/demo.css" rel="stylesheet">
     <link href="/css/navigation.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/Bootstrap/js/modal.js"></script>
-    <script type="text/javascript" src="/js/Bootstrap/js/tooltip.js"></script>
     <script type="text/javascript" src="/js/dragsort-0.5.2/jquery.dragsort-0.5.2.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap-treeview/src/js/bootstrap-treeview.js"></script>
     <script type="text/javascript" src="/js/metisMenu/metisMenu.min.js"></script>
-    <script type="text/javascript" src="/js/navigation.js"></script>
+    <script type="text/javascript" src="/js/views/navigation.js"></script>
 </head>
 <body>
 <div class="container" id="container-main">
     <div class="row">
-        <div class="col-lg-3 wei-col-lg-3">
+        <div class="col-lg-3 rowcol-left">
             <div class="treeview-head">导航列表
                 <div class="treeview-head-right">
-                    <a href="#">
-                        <span class="treeview-head-icon-right octicon octicon-plus" data-toggle="tooltip"
-                              data-placement="top" title="添加导航"></span>
+                    <a href="#" class="treeview-head-icon-right">
+                        <span id="addnavlink" class="octicon octicon-plus" data-toggle="tooltip" data-placement="top"
+                              title="添加"></span>
                     </a>
 
-                    <a href="#">
-                        <span id="editnav" class="treeview-head-icon-right octicon octicon-pencil" data-toggle="tooltip"
-                              data-placement="top" title="编辑导航"></span>
+                    <a href="#" class="treeview-head-icon-right">
+                         <span id="editnav" class=" octicon octicon-pencil" data-toggle="tooltip"
+                               data-placement="top" title="编辑"></span>
                     </a>
                 </div>
             </div>
-            <div id="treeview5" class=""></div>
+            <div id="treeview"></div>
+            <div class="editdlg">
+                <form>
+                    <div class="form-group form-group-sm">
+                        <label for="naveditname">名称</label>
+                        <input type="text" class="form-control" id="naveditname">
+                    </div>
+
+                    <button type="button" class="btn btn-success">确定</button>
+                    <button type="button" class="btn btn-danger" onclick="canceledit()">取消</button>
+                </form>
+            </div>
         </div>
-        <div class="col-lg-9 wei-col-lg-9">
+        <div class="col-lg-9 rowcol-right">
             <div class="btn-search">
                 <form action="http://www.baidu.com/baidu" target="_blank">
                     <div class="input-group input-group-sm">
@@ -86,333 +95,98 @@
 
             <div id="showlink">
                 <ul>
-
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.baidu.com">
+                            <img width="16px" height="16px" style="margin-right:5px;"
+                                 src="http://www.solidot.org/favicon.ico">百度
+                            </img>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
+                    </li>
+                    <li>
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
                     <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
+                        <div class="showlinkicon"><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
                             <img width="16px" height="16px" style="margin-right:5px;"
                                  src="http://www.solidot.org/favicon.ico">奇客
                             </img>
-
-                        </a></div>
+                        </a>
+                            <span class="linkedit linkediticon octicon octicon-pencil"></span>
+                            <span class="linkedit linkdelicon octicon octicon-x"></span></div>
                     </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
 
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
-                    <li>
-                        <div><a target="_blank" href="http://www.solidot.org/?theme=clightgreen">
-                            <img width="16px" height="16px" style="margin-right:5px;"
-                                 src="http://www.solidot.org/favicon.ico">奇客
-                            </img>
-
-                        </a></div>
-                    </li>
                 </ul>
+                <div class="editlinkdlg">
+                    <form>
+                        <div class="form-group">
+                            <label for="linkeditname">名称</label>
+                            <input type="text" class="form-control" id="linkeditname">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="linkediturl">URL</label>
+                            <input type="text" class="form-control" id="linkediturl">
+                        </div>
+                        <button type="button" class="btn btn-success">确定</button>
+                        <button type="button" class="btn btn-danger" onclick="canceleditLink()">取消</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 </div>
 </body>
 <script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>

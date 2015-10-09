@@ -5,7 +5,7 @@
 <head>
     <title>登录</title>
     <link href="${path}/css/login.css" rel="stylesheet">
-    <script type="text/javascript" src="${path}/js/login.js"></script>
+    <script type="text/javascript" src="${path}/js/views/login.js"></script>
 </head>
 <body>
 <div class="container" id="logincontainer">
